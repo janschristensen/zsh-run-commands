@@ -1,0 +1,28 @@
+{ pkgs ? import <nixpkgs> {} }:
+pkgs.mkShell {
+  packages = with pkgs; [ 
+    gum
+    git
+    gh
+    kind
+    kubectl
+    yq-go
+    jq
+    azure-cli
+    fzf
+    vim-full
+    python3
+    opentofu    
+    ansible
+    ansible-lint
+    sshpass
+    tflint
+    terraform-docs   
+    pre-commit
+    tree
+    fd
+  ];
+  shellHook = ''
+    export USINGNIX="shell.nix"
+  '';  
+}
